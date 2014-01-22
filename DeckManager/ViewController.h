@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Deck.h"
+#import "PhraseDeckService.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
+@property (nonatomic, strong) NSArray* decks;
+
+-(id) initWithDecks: (NSArray*) decks;
 
 @end

@@ -7,12 +7,22 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "PhraseDeckService.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    PhraseDeckService* pds = [[PhraseDeckService alloc] init];
+    NSArray* decks = [pds getFakeDeckList];
+    ViewController *controller = [[ViewController alloc] initWithDecks: decks];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    
+    self.window.rootViewController = navController;
+    [_window makeKeyAndVisible];
+    
     return YES;
 }
 							
