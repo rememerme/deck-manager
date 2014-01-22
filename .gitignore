@@ -1,0 +1,7 @@
+DeckManager.xcodeproj/
+DeckManagerTests/
+*.DS_Store
+DeckManager/Base.lproj/
+DeckManager/Images.xcassets/
+DeckManager/en.lproj/
+
