@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "Deck.h"
 #import "User.h"
+#import "DeckService.h"
 
-@interface PhraseDeckService : NSObject
+@interface PhraseDeckService : NSObject <DeckService>
 
--(NSArray*) getDeckListWithUser: (User*) user;
-
--(NSArray*) getFakeDeckList;
+// Constants for this service
+FOUNDATION_EXPORT NSString *const PhraseDeckURL;
 
 @end

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		406DDCAC1891AB0000BA84C2 /* DeckTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 406DDCAB1891AB0000BA84C2 /* DeckTable.m */; };
+		406DDCB01891B64000BA84C2 /* MockDeckService.m in Sources */ = {isa = PBXBuildFile; fileRef = 406DDCAF1891B64000BA84C2 /* MockDeckService.m */; };
+		406DDCB31891C8AA00BA84C2 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 406DDCB21891C8AA00BA84C2 /* HomeViewController.m */; };
 		9DB9D3F018904B7E00B1D97C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9D3EF18904B7E00B1D97C /* Foundation.framework */; };
 		9DB9D3F218904B7E00B1D97C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9D3F118904B7E00B1D97C /* CoreGraphics.framework */; };
 		9DB9D3F418904B7E00B1D97C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9D3F318904B7E00B1D97C /* UIKit.framework */; };
@@ -14,7 +17,7 @@
 		9DB9D3FC18904B7E00B1D97C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9D3FB18904B7E00B1D97C /* main.m */; };
 		9DB9D40018904B7E00B1D97C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9D3FF18904B7E00B1D97C /* AppDelegate.m */; };
 		9DB9D40318904B7E00B1D97C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB9D40118904B7E00B1D97C /* Main.storyboard */; };
-		9DB9D40618904B7E00B1D97C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9D40518904B7E00B1D97C /* ViewController.m */; };
+		9DB9D40618904B7E00B1D97C /* DeckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9D40518904B7E00B1D97C /* DeckViewController.m */; };
 		9DB9D40818904B7E00B1D97C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB9D40718904B7E00B1D97C /* Images.xcassets */; };
 		9DB9D40F18904B7E00B1D97C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9D40E18904B7E00B1D97C /* XCTest.framework */; };
 		9DB9D41018904B7E00B1D97C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9D3EF18904B7E00B1D97C /* Foundation.framework */; };
@@ -38,6 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		406DDCAA1891AB0000BA84C2 /* DeckTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeckTable.h; sourceTree = "<group>"; };
+		406DDCAB1891AB0000BA84C2 /* DeckTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeckTable.m; sourceTree = "<group>"; };
+		406DDCAD1891B1C600BA84C2 /* DeckService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeckService.h; sourceTree = "<group>"; };
+		406DDCAE1891B64000BA84C2 /* MockDeckService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockDeckService.h; path = Images.xcassets/MockDeckService.h; sourceTree = "<group>"; };
+		406DDCAF1891B64000BA84C2 /* MockDeckService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockDeckService.m; path = Images.xcassets/MockDeckService.m; sourceTree = "<group>"; };
+		406DDCB11891C8AA00BA84C2 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		406DDCB21891C8AA00BA84C2 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		9DB9D3EC18904B7E00B1D97C /* DeckManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeckManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB9D3EF18904B7E00B1D97C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9DB9D3F118904B7E00B1D97C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -49,8 +59,8 @@
 		9DB9D3FE18904B7E00B1D97C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9DB9D3FF18904B7E00B1D97C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9DB9D40218904B7E00B1D97C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9DB9D40418904B7E00B1D97C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9DB9D40518904B7E00B1D97C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9DB9D40418904B7E00B1D97C /* DeckViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeckViewController.h; sourceTree = "<group>"; };
+		9DB9D40518904B7E00B1D97C /* DeckViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeckViewController.m; sourceTree = "<group>"; };
 		9DB9D40718904B7E00B1D97C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9DB9D40D18904B7E00B1D97C /* DeckManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeckManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB9D40E18904B7E00B1D97C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -178,6 +188,9 @@
 			children = (
 				9DB9D42A1890564400B1D97C /* PhraseDeckService.h */,
 				9DB9D42B1890564400B1D97C /* PhraseDeckService.m */,
+				406DDCAD1891B1C600BA84C2 /* DeckService.h */,
+				406DDCAE1891B64000BA84C2 /* MockDeckService.h */,
+				406DDCAF1891B64000BA84C2 /* MockDeckService.m */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -185,11 +198,15 @@
 		9DB9D4291890562100B1D97C /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				406DDCAA1891AB0000BA84C2 /* DeckTable.h */,
+				406DDCAB1891AB0000BA84C2 /* DeckTable.m */,
 				9DB9D3FE18904B7E00B1D97C /* AppDelegate.h */,
 				9DB9D3FF18904B7E00B1D97C /* AppDelegate.m */,
 				9DB9D40118904B7E00B1D97C /* Main.storyboard */,
-				9DB9D40418904B7E00B1D97C /* ViewController.h */,
-				9DB9D40518904B7E00B1D97C /* ViewController.m */,
+				9DB9D40418904B7E00B1D97C /* DeckViewController.h */,
+				9DB9D40518904B7E00B1D97C /* DeckViewController.m */,
+				406DDCB11891C8AA00BA84C2 /* HomeViewController.h */,
+				406DDCB21891C8AA00BA84C2 /* HomeViewController.m */,
 			);
 			name = Interface;
 			sourceTree = "<group>";
@@ -293,10 +310,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DB9D4261890559200B1D97C /* Deck.m in Sources */,
-				9DB9D40618904B7E00B1D97C /* ViewController.m in Sources */,
+				9DB9D40618904B7E00B1D97C /* DeckViewController.m in Sources */,
 				9DB9D42F1890570400B1D97C /* User.m in Sources */,
 				9DB9D42C1890564400B1D97C /* PhraseDeckService.m in Sources */,
+				406DDCAC1891AB0000BA84C2 /* DeckTable.m in Sources */,
+				406DDCB31891C8AA00BA84C2 /* HomeViewController.m in Sources */,
 				9DB9D40018904B7E00B1D97C /* AppDelegate.m in Sources */,
+				406DDCB01891B64000BA84C2 /* MockDeckService.m in Sources */,
 				9DB9D3FC18904B7E00B1D97C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,6 +526,7 @@
 				9DB9D42018904B7E00B1D97C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9DB9D42118904B7E00B1D97C /* Build configuration list for PBXNativeTarget "DeckManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +535,7 @@
 				9DB9D42318904B7E00B1D97C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

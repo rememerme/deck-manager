@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString* deck_id;
 @property (nonatomic, strong) NSString* description;
+@property (nonatomic, strong) NSString* name;
 
 -(id) initWithDictionary: (NSDictionary*) dict;
 

@@ -15,6 +15,7 @@
     self = [super init];
     _deck_id = (NSString*) [dict objectForKey:@"deck_id"];
     _description = (NSString *) [dict objectForKey:@"description"];
+    _name = (NSString *) [dict objectForKey:@"name"];
     return self;
 }
 
