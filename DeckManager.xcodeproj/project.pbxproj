@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9DB9D3F018904B7E00B1D97C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9D3EF18904B7E00B1D97C /* Foundation.framework */; };
+		9DB9D3F218904B7E00B1D97C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9D3F118904B7E00B1D97C /* CoreGraphics.framework */; };
+		9DB9D3F418904B7E00B1D97C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9D3F318904B7E00B1D97C /* UIKit.framework */; };
+		9DB9D3FA18904B7E00B1D97C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9DB9D3F818904B7E00B1D97C /* InfoPlist.strings */; };
+		9DB9D3FC18904B7E00B1D97C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9D3FB18904B7E00B1D97C /* main.m */; };
+		9DB9D40018904B7E00B1D97C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9D3FF18904B7E00B1D97C /* AppDelegate.m */; };
+		9DB9D40318904B7E00B1D97C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB9D40118904B7E00B1D97C /* Main.storyboard */; };
+		9DB9D40618904B7E00B1D97C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9D40518904B7E00B1D97C /* ViewController.m */; };
+		9DB9D40818904B7E00B1D97C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB9D40718904B7E00B1D97C /* Images.xcassets */; };
+		9DB9D40F18904B7E00B1D97C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9D40E18904B7E00B1D97C /* XCTest.framework */; };
+		9DB9D41018904B7E00B1D97C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9D3EF18904B7E00B1D97C /* Foundation.framework */; };
+		9DB9D41118904B7E00B1D97C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9D3F318904B7E00B1D97C /* UIKit.framework */; };
+		9DB9D41918904B7E00B1D97C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9DB9D41718904B7E00B1D97C /* InfoPlist.strings */; };
+		9DB9D41B18904B7E00B1D97C /* DeckManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9D41A18904B7E00B1D97C /* DeckManagerTests.m */; };
+		9DB9D4261890559200B1D97C /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9D4251890559200B1D97C /* Deck.m */; };
+		9DB9D42C1890564400B1D97C /* PhraseDeckService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9D42B1890564400B1D97C /* PhraseDeckService.m */; };
+		9DB9D42F1890570400B1D97C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9D42E1890570400B1D97C /* User.m */; };
+		9DB9D43118905DB600B1D97C /* decks_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DB9D43018905DB600B1D97C /* decks_test.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9DB9D41218904B7E00B1D97C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DB9D3E418904B7E00B1D97C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DB9D3EB18904B7E00B1D97C;
+			remoteInfo = DeckManager;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9DB9D3EC18904B7E00B1D97C /* DeckManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeckManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DB9D3EF18904B7E00B1D97C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9DB9D3F118904B7E00B1D97C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9DB9D3F318904B7E00B1D97C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9DB9D3F718904B7E00B1D97C /* DeckManager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DeckManager-Info.plist"; sourceTree = "<group>"; };
+		9DB9D3F918904B7E00B1D97C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9DB9D3FB18904B7E00B1D97C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9DB9D3FD18904B7E00B1D97C /* DeckManager-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeckManager-Prefix.pch"; sourceTree = "<group>"; };
+		9DB9D3FE18904B7E00B1D97C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9DB9D3FF18904B7E00B1D97C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9DB9D40218904B7E00B1D97C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9DB9D40418904B7E00B1D97C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9DB9D40518904B7E00B1D97C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9DB9D40718904B7E00B1D97C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9DB9D40D18904B7E00B1D97C /* DeckManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeckManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DB9D40E18904B7E00B1D97C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		9DB9D41618904B7E00B1D97C /* DeckManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DeckManagerTests-Info.plist"; sourceTree = "<group>"; };
+		9DB9D41818904B7E00B1D97C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9DB9D41A18904B7E00B1D97C /* DeckManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeckManagerTests.m; sourceTree = "<group>"; };
+		9DB9D4241890559200B1D97C /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		9DB9D4251890559200B1D97C /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
+		9DB9D42A1890564400B1D97C /* PhraseDeckService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhraseDeckService.h; sourceTree = "<group>"; };
+		9DB9D42B1890564400B1D97C /* PhraseDeckService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhraseDeckService.m; sourceTree = "<group>"; };
+		9DB9D42D1890570400B1D97C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		9DB9D42E1890570400B1D97C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		9DB9D43018905DB600B1D97C /* decks_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = decks_test.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9DB9D3E918904B7E00B1D97C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DB9D3F218904B7E00B1D97C /* CoreGraphics.framework in Frameworks */,
+				9DB9D3F418904B7E00B1D97C /* UIKit.framework in Frameworks */,
+				9DB9D3F018904B7E00B1D97C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DB9D40A18904B7E00B1D97C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DB9D40F18904B7E00B1D97C /* XCTest.framework in Frameworks */,
+				9DB9D41118904B7E00B1D97C /* UIKit.framework in Frameworks */,
+				9DB9D41018904B7E00B1D97C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9DB9D3E318904B7E00B1D97C = {
+			isa = PBXGroup;
+			children = (
+				9DB9D3F518904B7E00B1D97C /* DeckManager */,
+				9DB9D41418904B7E00B1D97C /* DeckManagerTests */,
+				9DB9D3EE18904B7E00B1D97C /* Frameworks */,
+				9DB9D3ED18904B7E00B1D97C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9DB9D3ED18904B7E00B1D97C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9DB9D3EC18904B7E00B1D97C /* DeckManager.app */,
+				9DB9D40D18904B7E00B1D97C /* DeckManagerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9DB9D3EE18904B7E00B1D97C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DB9D3EF18904B7E00B1D97C /* Foundation.framework */,
+				9DB9D3F118904B7E00B1D97C /* CoreGraphics.framework */,
+				9DB9D3F318904B7E00B1D97C /* UIKit.framework */,
+				9DB9D40E18904B7E00B1D97C /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9DB9D3F518904B7E00B1D97C /* DeckManager */ = {
+			isa = PBXGroup;
+			children = (
+				9DB9D4281890561500B1D97C /* Service */,
+				9DB9D427189055F900B1D97C /* Model */,
+				9DB9D4291890562100B1D97C /* Interface */,
+				9DB9D40718904B7E00B1D97C /* Images.xcassets */,
+				9DB9D3F618904B7E00B1D97C /* Supporting Files */,
+			);
+			path = DeckManager;
+			sourceTree = "<group>";
+		};
+		9DB9D3F618904B7E00B1D97C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9DB9D3F718904B7E00B1D97C /* DeckManager-Info.plist */,
+				9DB9D3F818904B7E00B1D97C /* InfoPlist.strings */,
+				9DB9D3FB18904B7E00B1D97C /* main.m */,
+				9DB9D3FD18904B7E00B1D97C /* DeckManager-Prefix.pch */,
+				9DB9D43018905DB600B1D97C /* decks_test.json */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9DB9D41418904B7E00B1D97C /* DeckManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				9DB9D41A18904B7E00B1D97C /* DeckManagerTests.m */,
+				9DB9D41518904B7E00B1D97C /* Supporting Files */,
+			);
+			path = DeckManagerTests;
+			sourceTree = "<group>";
+		};
+		9DB9D41518904B7E00B1D97C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9DB9D41618904B7E00B1D97C /* DeckManagerTests-Info.plist */,
+				9DB9D41718904B7E00B1D97C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9DB9D427189055F900B1D97C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9DB9D42D1890570400B1D97C /* User.h */,
+				9DB9D42E1890570400B1D97C /* User.m */,
+				9DB9D4241890559200B1D97C /* Deck.h */,
+				9DB9D4251890559200B1D97C /* Deck.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9DB9D4281890561500B1D97C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9DB9D42A1890564400B1D97C /* PhraseDeckService.h */,
+				9DB9D42B1890564400B1D97C /* PhraseDeckService.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		9DB9D4291890562100B1D97C /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				9DB9D3FE18904B7E00B1D97C /* AppDelegate.h */,
+				9DB9D3FF18904B7E00B1D97C /* AppDelegate.m */,
+				9DB9D40118904B7E00B1D97C /* Main.storyboard */,
+				9DB9D40418904B7E00B1D97C /* ViewController.h */,
+				9DB9D40518904B7E00B1D97C /* ViewController.m */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9DB9D3EB18904B7E00B1D97C /* DeckManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DB9D41E18904B7E00B1D97C /* Build configuration list for PBXNativeTarget "DeckManager" */;
+			buildPhases = (
+				9DB9D3E818904B7E00B1D97C /* Sources */,
+				9DB9D3E918904B7E00B1D97C /* Frameworks */,
+				9DB9D3EA18904B7E00B1D97C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeckManager;
+			productName = DeckManager;
+			productReference = 9DB9D3EC18904B7E00B1D97C /* DeckManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9DB9D40C18904B7E00B1D97C /* DeckManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DB9D42118904B7E00B1D97C /* Build configuration list for PBXNativeTarget "DeckManagerTests" */;
+			buildPhases = (
+				9DB9D40918904B7E00B1D97C /* Sources */,
+				9DB9D40A18904B7E00B1D97C /* Frameworks */,
+				9DB9D40B18904B7E00B1D97C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9DB9D41318904B7E00B1D97C /* PBXTargetDependency */,
+			);
+			name = DeckManagerTests;
+			productName = DeckManagerTests;
+			productReference = 9DB9D40D18904B7E00B1D97C /* DeckManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9DB9D3E418904B7E00B1D97C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Rememerme;
+				TargetAttributes = {
+					9DB9D40C18904B7E00B1D97C = {
+						TestTargetID = 9DB9D3EB18904B7E00B1D97C;
+					};
+				};
+			};
+			buildConfigurationList = 9DB9D3E718904B7E00B1D97C /* Build configuration list for PBXProject "DeckManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9DB9D3E318904B7E00B1D97C;
+			productRefGroup = 9DB9D3ED18904B7E00B1D97C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9DB9D3EB18904B7E00B1D97C /* DeckManager */,
+				9DB9D40C18904B7E00B1D97C /* DeckManagerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9DB9D3EA18904B7E00B1D97C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DB9D43118905DB600B1D97C /* decks_test.json in Resources */,
+				9DB9D40818904B7E00B1D97C /* Images.xcassets in Resources */,
+				9DB9D3FA18904B7E00B1D97C /* InfoPlist.strings in Resources */,
+				9DB9D40318904B7E00B1D97C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DB9D40B18904B7E00B1D97C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DB9D41918904B7E00B1D97C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9DB9D3E818904B7E00B1D97C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DB9D4261890559200B1D97C /* Deck.m in Sources */,
+				9DB9D40618904B7E00B1D97C /* ViewController.m in Sources */,
+				9DB9D42F1890570400B1D97C /* User.m in Sources */,
+				9DB9D42C1890564400B1D97C /* PhraseDeckService.m in Sources */,
+				9DB9D40018904B7E00B1D97C /* AppDelegate.m in Sources */,
+				9DB9D3FC18904B7E00B1D97C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DB9D40918904B7E00B1D97C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DB9D41B18904B7E00B1D97C /* DeckManagerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9DB9D41318904B7E00B1D97C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9DB9D3EB18904B7E00B1D97C /* DeckManager */;
+			targetProxy = 9DB9D41218904B7E00B1D97C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9DB9D3F818904B7E00B1D97C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DB9D3F918904B7E00B1D97C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9DB9D40118904B7E00B1D97C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DB9D40218904B7E00B1D97C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9DB9D41718904B7E00B1D97C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DB9D41818904B7E00B1D97C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9DB9D41C18904B7E00B1D97C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9DB9D41D18904B7E00B1D97C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9DB9D41F18904B7E00B1D97C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DeckManager/DeckManager-Prefix.pch";
+				INFOPLIST_FILE = "DeckManager/DeckManager-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9DB9D42018904B7E00B1D97C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DeckManager/DeckManager-Prefix.pch";
+				INFOPLIST_FILE = "DeckManager/DeckManager-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9DB9D42218904B7E00B1D97C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DeckManager.app/DeckManager";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DeckManager/DeckManager-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DeckManagerTests/DeckManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		9DB9D42318904B7E00B1D97C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DeckManager.app/DeckManager";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DeckManager/DeckManager-Prefix.pch";
+				INFOPLIST_FILE = "DeckManagerTests/DeckManagerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9DB9D3E718904B7E00B1D97C /* Build configuration list for PBXProject "DeckManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DB9D41C18904B7E00B1D97C /* Debug */,
+				9DB9D41D18904B7E00B1D97C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DB9D41E18904B7E00B1D97C /* Build configuration list for PBXNativeTarget "DeckManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DB9D41F18904B7E00B1D97C /* Debug */,
+				9DB9D42018904B7E00B1D97C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9DB9D42118904B7E00B1D97C /* Build configuration list for PBXNativeTarget "DeckManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DB9D42218904B7E00B1D97C /* Debug */,
+				9DB9D42318904B7E00B1D97C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9DB9D3E418904B7E00B1D97C /* Project object */;
+}
