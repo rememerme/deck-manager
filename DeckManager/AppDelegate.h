@@ -10,6 +10,15 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
+// objects for managing the core data used by this application
+@property (readonly, strong, nonatomic) NSManagedObjectContext* managedObjectContext;
+@property (readonly, strong, nonatomic) NSManagedObjectModel* managedObjectModel;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator* persistentStoreCoordinator;
+
+- (void) saveContext;
+- (NSURL *) applicationDocumentsDirectory;
+
+// the window for this app delegate
 @property (strong, nonatomic) UIWindow *window;
 
 @end

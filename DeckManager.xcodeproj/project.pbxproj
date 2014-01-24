@@ -10,6 +10,8 @@
 		406DDCAC1891AB0000BA84C2 /* DeckTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 406DDCAB1891AB0000BA84C2 /* DeckTable.m */; };
 		406DDCB01891B64000BA84C2 /* MockDeckService.m in Sources */ = {isa = PBXBuildFile; fileRef = 406DDCAF1891B64000BA84C2 /* MockDeckService.m */; };
 		406DDCB31891C8AA00BA84C2 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 406DDCB21891C8AA00BA84C2 /* HomeViewController.m */; };
+		406DDCB51892053D00BA84C2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406DDCB41892053D00BA84C2 /* CoreData.framework */; };
+		406DDCB8189205F700BA84C2 /* DeckManagerData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 406DDCB6189205F700BA84C2 /* DeckManagerData.xcdatamodeld */; };
 		9DB9D3F018904B7E00B1D97C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9D3EF18904B7E00B1D97C /* Foundation.framework */; };
 		9DB9D3F218904B7E00B1D97C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9D3F118904B7E00B1D97C /* CoreGraphics.framework */; };
 		9DB9D3F418904B7E00B1D97C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9D3F318904B7E00B1D97C /* UIKit.framework */; };
@@ -48,6 +50,8 @@
 		406DDCAF1891B64000BA84C2 /* MockDeckService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockDeckService.m; path = Images.xcassets/MockDeckService.m; sourceTree = "<group>"; };
 		406DDCB11891C8AA00BA84C2 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		406DDCB21891C8AA00BA84C2 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		406DDCB41892053D00BA84C2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		406DDCB7189205F700BA84C2 /* DeckManagerData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DeckManagerData.xcdatamodel; sourceTree = "<group>"; };
 		9DB9D3EC18904B7E00B1D97C /* DeckManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeckManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB9D3EF18904B7E00B1D97C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9DB9D3F118904B7E00B1D97C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				406DDCB51892053D00BA84C2 /* CoreData.framework in Frameworks */,
 				9DB9D3F218904B7E00B1D97C /* CoreGraphics.framework in Frameworks */,
 				9DB9D3F418904B7E00B1D97C /* UIKit.framework in Frameworks */,
 				9DB9D3F018904B7E00B1D97C /* Foundation.framework in Frameworks */,
@@ -103,6 +108,7 @@
 		9DB9D3E318904B7E00B1D97C = {
 			isa = PBXGroup;
 			children = (
+				406DDCB6189205F700BA84C2 /* DeckManagerData.xcdatamodeld */,
 				9DB9D3F518904B7E00B1D97C /* DeckManager */,
 				9DB9D41418904B7E00B1D97C /* DeckManagerTests */,
 				9DB9D3EE18904B7E00B1D97C /* Frameworks */,
@@ -122,6 +128,7 @@
 		9DB9D3EE18904B7E00B1D97C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				406DDCB41892053D00BA84C2 /* CoreData.framework */,
 				9DB9D3EF18904B7E00B1D97C /* Foundation.framework */,
 				9DB9D3F118904B7E00B1D97C /* CoreGraphics.framework */,
 				9DB9D3F318904B7E00B1D97C /* UIKit.framework */,
@@ -311,6 +318,7 @@
 			files = (
 				9DB9D4261890559200B1D97C /* Deck.m in Sources */,
 				9DB9D40618904B7E00B1D97C /* DeckViewController.m in Sources */,
+				406DDCB8189205F700BA84C2 /* DeckManagerData.xcdatamodeld in Sources */,
 				9DB9D42F1890570400B1D97C /* User.m in Sources */,
 				9DB9D42C1890564400B1D97C /* PhraseDeckService.m in Sources */,
 				406DDCAC1891AB0000BA84C2 /* DeckTable.m in Sources */,
@@ -538,6 +546,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		406DDCB6189205F700BA84C2 /* DeckManagerData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				406DDCB7189205F700BA84C2 /* DeckManagerData.xcdatamodel */,
+			);
+			currentVersion = 406DDCB7189205F700BA84C2 /* DeckManagerData.xcdatamodel */;
+			path = DeckManagerData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9DB9D3E418904B7E00B1D97C /* Project object */;
 }

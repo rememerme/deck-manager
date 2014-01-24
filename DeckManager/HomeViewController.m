@@ -20,7 +20,7 @@
     return self;
 }
 
-- (void)viewDidLoad {
+- (void) viewDidLoad {
     [super viewDidLoad];
     
     // create tab bar controller and array to hold the view controllers
@@ -53,7 +53,7 @@
     
     _tabBarController.viewControllers = localControllersArray;
     
-    for (UIViewController *controller in _tabBarController.viewControllers) {
+    for (UIViewController* controller in _tabBarController.viewControllers) {
         controller.title = [titles objectAtIndex: [_tabBarController.viewControllers indexOfObject: controller]];
     }
     
