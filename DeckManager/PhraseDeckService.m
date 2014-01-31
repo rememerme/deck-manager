@@ -10,20 +10,25 @@
 
 @implementation PhraseDeckService
 
-@synthesize user = _user;
 NSString* const PhraseDeckURL = @"http://nomnom.rememerme.com:8003/rest/v1/phrase-decks/";
+@synthesize dDao = _dDao;
+@synthesize upDao = _upDao;
+@synthesize user = _user;
 
 
--(id) initWithUser:(User *) user {
+-(id) initWithUser:(User *) user inManagedObjectContext:(NSManagedObjectContext *) ctx{
     self = [super init];
     _user = user;
+    _dDao = [[PhraseDeckDao alloc] initWithNSManagedObjectContext: ctx];
+    _upDao = [[UpdateDao alloc] initWithNSManagedObjectContext: ctx];
     return self;
 }
 
--(NSArray*) getDeckList {
-    NSString* urlString = [self addAccessTokenTo:PhraseDeckURL];
+-(void) updateDeckList {
+    // Get the list of updates from the pharse deck service
+    NSString* urlString = [self addSinceParamTo: [self addAccessTokenTo:PhraseDeckURL withAmp: false] withAmp: true];
     NSLog(@"%@", urlString);
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString: urlString]];
+    NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString: urlString]];
     [request setHTTPMethod:@"GET"];
     
     NSError* requestError = nil;
@@ -31,29 +36,31 @@ NSString* const PhraseDeckURL = @"http://nomnom.rememerme.com:8003/rest/v1/phras
     NSHTTPURLResponse* response = nil;
     NSData* adata = [NSURLConnection sendSynchronousRequest:request returningResponse: &response error: &requestError];
     if(adata && [response statusCode] == 200) {
-        return [PhraseDeckService parseDeckListWithData: adata];
+        Update* up = [_upDao getLatestUpdate];
+        up.phrase_decks = [NSDate date];
+        [self parseDeckListWithData: adata];
+        
+        // save core data
+        NSError* coreDataError;
+        [_dDao.managedObjectContext save: &coreDataError];
     }
     else {
         NSLog(@"Request error %@", requestError);
-        return nil;
     }
 
 }
 
--(Deck *) createWithDeck: (Deck *) deck {
+-(PhraseDeck*) createDeck: (NSDictionary *) postDeck {
     // setup the URL with the access token given by the session_id
-    NSString* urlString = [self addAccessTokenTo:PhraseDeckURL];
+    NSString* urlString = [self addAccessTokenTo:PhraseDeckURL withAmp:false];
     NSLog(@"%@", urlString);
     
     // prepare the request to the URL
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString: urlString]];
     
     // create a post dictionary using content-type application/json
-    NSArray* objects = [NSArray arrayWithObjects: deck.name, deck.description, nil];
-    NSArray* keys = [NSArray arrayWithObjects:@"description", @"name", nil];
-    NSDictionary* postDict = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
     NSError* requestError = nil;
-    NSData* jsonRequest = [NSJSONSerialization dataWithJSONObject:postDict options:NSJSONWritingPrettyPrinted error:&requestError];
+    NSData* jsonRequest = [NSJSONSerialization dataWithJSONObject: postDeck options:0 error:&requestError];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:jsonRequest];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -62,7 +69,13 @@ NSString* const PhraseDeckURL = @"http://nomnom.rememerme.com:8003/rest/v1/phras
     NSHTTPURLResponse* response = nil;
     NSData* adata = [NSURLConnection sendSynchronousRequest:request returningResponse: &response error: &requestError];
     if(adata && [response statusCode] == 200) {
-        return [PhraseDeckService parseDeckWithData: adata];
+        PhraseDeck* deck = [self parseDeckWithData: adata];
+        
+        // save core data
+        NSError* coreDataError;
+        [_dDao.managedObjectContext save: &coreDataError];
+        
+        return deck;
     }
     else {
         NSLog(@"Request error %@", requestError);
@@ -70,25 +83,21 @@ NSString* const PhraseDeckURL = @"http://nomnom.rememerme.com:8003/rest/v1/phras
     }
 }
 
--(void) updateCardsFromDeck: (Deck *) deck {
-    
-}
-
 #pragma mark private methods
 
-+(Deck*) parseDeckWithData: (NSData*) adata {
+-(PhraseDeck*) parseDeckWithData: (NSData*) adata {
     NSError* parseError = nil;
     NSDictionary* deckDict = [NSJSONSerialization JSONObjectWithData:adata options:kNilOptions error:&parseError];
     
     if (deckDict) {
-        return [[Deck alloc] initWithDictionary:deckDict];
+        return [_dDao createDeckWithDictionary: deckDict];
     }
     
     NSLog(@"Parse error %@", parseError);
     return nil;
 }
 
-+(NSArray*) parseDeckListWithData: (NSData*) adata {
+-(NSArray*) parseDeckListWithData: (NSData*) adata {
     // Handle the response
     NSLog(@"Friend Response Success");
         
@@ -99,7 +108,7 @@ NSString* const PhraseDeckURL = @"http://nomnom.rememerme.com:8003/rest/v1/phras
         
     if(decksArray) {
         for (NSDictionary* deck in decksArray) {
-            Deck* d = [[Deck alloc] initWithDictionary: deck];
+            PhraseDeck* d = [_dDao createDeckWithDictionary: deck];
             [retArray addObject:d];
         }
     }
@@ -110,8 +119,32 @@ NSString* const PhraseDeckURL = @"http://nomnom.rememerme.com:8003/rest/v1/phras
     return [[NSArray alloc] initWithArray:retArray];
 }
 
--(NSString*) addAccessTokenTo: (NSString*) url {
-    return [url stringByAppendingString:[@"?access_token=" stringByAppendingString:_user.session_id]];
+-(NSString*) addSinceParamTo: (NSString*) url withAmp: (BOOL) amp {
+    Update* update = [_upDao getLatestUpdate];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy"];
+    
+    if (update.phrase_decks == nil) {
+        return url;
+    }
+    
+    NSString* lastLookup = [formatter stringFromDate:update.phrase_decks];
+    
+    if (amp) {
+        return [url stringByAppendingString: [@"&since=" stringByAppendingString: lastLookup]];
+    }
+    else {
+        return [url stringByAppendingString: [@"?since=" stringByAppendingString: lastLookup]];
+    }
+}
+
+-(NSString*) addAccessTokenTo: (NSString*) url withAmp: (BOOL) amp {
+    if (!amp) {
+        return [url stringByAppendingString:[@"?access_token=" stringByAppendingString:_user.session_id]];
+    }
+    else {
+        return [url stringByAppendingString:[@"&access_token=" stringByAppendingString:_user.session_id]];
+    }
 }
 
 @end

@@ -16,9 +16,10 @@
 @property (nonatomic, strong) User* user;
 @property (atomic, strong) DeckViewController* phraseDeckController;
 @property (atomic, strong) DeckViewController* nominationDeckController;
+@property (nonatomic, strong) NSManagedObjectContext* managedObjectContext;
 
 @property (nonatomic) UITabBarController *tabBarController;
 
--(id)initWithUser: (User*) user;
+-(id)initWithUser: (User*) user inManagedObjectContext:(NSManagedObjectContext *)ctx;
 
 @end

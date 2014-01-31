@@ -14,9 +14,10 @@
 
 @implementation HomeViewController
 
--(id) initWithUser:(User*) user {
+-(id) initWithUser:(User*) user inManagedObjectContext:(NSManagedObjectContext *)ctx {
     self = [super init];
     _user = user;
+    _managedObjectContext = ctx;
     return self;
 }
 
@@ -29,8 +30,8 @@
     NSMutableArray *localControllersArray = [[NSMutableArray alloc] initWithCapacity:1];
     
     // setup the services that the deck view controllers will be using
-    MockDeckService* pds1 = [[MockDeckService alloc] initWithUser: _user];
-    MockDeckService* pds2 = [[MockDeckService alloc] initWithUser: _user];
+    MockDeckService* pds1 = [[MockDeckService alloc] initWithUser: _user inManagedObjectContext: _managedObjectContext];
+    MockDeckService* pds2 = [[MockDeckService alloc] initWithUser: _user inManagedObjectContext: _managedObjectContext];
     
     // setup the controllers themselves as inner views
     _phraseDeckController = [[DeckViewController alloc] initWithService: pds1];

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DeckService.h"
+#import "PhraseDeckDao.h"
 
 @interface MockDeckService : NSObject <DeckService>
 

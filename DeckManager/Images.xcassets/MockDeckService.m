@@ -11,28 +11,34 @@
 @implementation MockDeckService
 
 @synthesize user = _user;
+@synthesize dDao = _dDao;
+@synthesize upDao = _upDao;
 
--(id) initWithUser: (User *) user {
+-(id) initWithUser: (User *) user inManagedObjectContext: (NSManagedObjectContext*) ctx {
     self = [super init];
     _user = user;
+    _dDao = [[PhraseDeckDao alloc] initWithNSManagedObjectContext: ctx];
+    _upDao = [[UpdateDao alloc] initWithNSManagedObjectContext: ctx];
     return self;
 }
 
--(NSArray*) getDeckList
-{
+-(void) updateDeckList {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:[@"decks_test.json" stringByDeletingPathExtension] ofType:[@"decks_test.json" pathExtension]];
     NSData* data = [NSData dataWithContentsOfFile:filePath];
     
-    return [self parseDeckListWithData: data];
+    [self parseDeckListWithData: data];
+    NSError* error;
+    [_dDao.managedObjectContext save:&error];
 }
 
--(Deck*) createWithDeck: (Deck *) deck {
+-(id<Deck>) createDeck: (NSDictionary *) deck_dict {
+    PhraseDeck* deck = [_dDao createDeckWithDictionary: deck_dict];
     deck.deck_id = [[NSUUID UUID] UUIDString];
-    return deck;
-}
-
--(void) updateCardsFromDeck: (Deck *) deck {
     
+    NSError* error;
+    [_dDao.managedObjectContext save: &error];
+    
+    return deck;
 }
 
 #pragma mark private methods
@@ -45,7 +51,7 @@
     
     if(decksArray) {
         for (NSDictionary* deck in decksArray) {
-            Deck* d = [[Deck alloc] initWithDictionary: deck];
+            PhraseDeck* d = [_dDao createDeckWithDictionary:deck];
             [retArray addObject:d];
         }
     }

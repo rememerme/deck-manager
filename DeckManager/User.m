@@ -10,4 +10,11 @@
 
 @implementation User
 
+-(id) initWithSession: (NSString*) session andID: (NSString*) user_id {
+    self = [self init];
+    _user_id = user_id;
+    _session_id = session;
+    return self;
+}
+
 @end

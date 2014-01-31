@@ -1,9 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A3017" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Entity" syncable="YES"/>
-    <entity name="Entity1" syncable="YES"/>
+    <entity name="NominationCard" syncable="YES">
+        <attribute name="date_created" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="description_text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_modified" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="nomination_card_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="term" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="deck" maxCount="1" deletionRule="Cascade" destinationEntity="NominationDeck" inverseName="cards" inverseEntity="NominationDeck" syncable="YES"/>
+    </entity>
+    <entity name="NominationDeck" syncable="YES">
+        <attribute name="cards_last_updated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="date_created" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="deck_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="description_text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_modified" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NominationCard" inverseName="deck" inverseEntity="NominationCard" syncable="YES"/>
+    </entity>
+    <entity name="PhraseCard" syncable="YES">
+        <attribute name="date_created" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="description_text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_modified" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="phrase_card_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="term" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="deck" maxCount="1" deletionRule="Nullify" destinationEntity="PhraseDeck" inverseName="cards" inverseEntity="PhraseDeck" syncable="YES"/>
+    </entity>
+    <entity name="PhraseDeck" representedClassName="PhraseDeck" syncable="YES">
+        <attribute name="cards_last_updated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="date_created" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="deck_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="description_text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="last_modified" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cards" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PhraseCard" inverseName="deck" inverseEntity="PhraseCard" syncable="YES"/>
+    </entity>
+    <entity name="Updates" representedClassName="Updates" syncable="YES">
+        <attribute name="nomination_decks" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="phrase_decks" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Entity" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Entity1" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="PhraseDeck" positionX="153" positionY="54" width="128" height="133"/>
+        <element name="NominationDeck" positionX="153" positionY="-121" width="128" height="133"/>
+        <element name="PhraseCard" positionX="-198" positionY="63" width="128" height="133"/>
+        <element name="NominationCard" positionX="-200" positionY="-123" width="128" height="133"/>
+        <element name="Updates" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

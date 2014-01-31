@@ -10,9 +10,9 @@
 
 @interface User : NSObject
 
-@property (nonatomic, strong) NSString* username;
 @property (nonatomic, strong) NSString* session_id;
 @property (nonatomic, strong) NSString* user_id;
-@property (nonatomic, strong) NSString* date_created;
-@property (nonatomic, strong) NSString* last_modified;
+
+-(id) initWithSession: (NSString*) session andID: (NSString*) user_id;
+
 @end

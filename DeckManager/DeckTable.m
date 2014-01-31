@@ -15,7 +15,7 @@
     self = [super initWithFrame:frame style: style];
     if (self) {
         _service = service;
-        _decks = [service getDeckList];
+        _decks = [service.dDao getDecks];
         self.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
         self.delegate = self;
         self.dataSource = self;
@@ -46,7 +46,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:MyIdentifier];
     }
     
-    cell.textLabel.text = ((Deck*) [_decks objectAtIndex:indexPath.row]).description;
+    cell.textLabel.text = ((id<Deck>) [_decks objectAtIndex:indexPath.row]).description_text;
     
     return cell;
 }

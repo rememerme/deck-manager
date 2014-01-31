@@ -2,37 +2,23 @@
 //  DeckService.h
 //  DeckManager
 //
-//  Created by Andy Oberlin on 1/23/14.
+//  Created by Andy Oberlin on 1/30/14.
 //  Copyright (c) 2014 Rememerme. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import "UpdateDao.h"
+#import "DeckDao.h"
 #import "User.h"
-#import "Deck.h"
 
 @protocol DeckService <NSObject>
 
 @property (nonatomic, strong) User* user;
+@property (nonatomic, strong) id<DeckDao> dDao;
+@property (nonatomic, strong) UpdateDao* upDao;
 
-/*
-    Constructor for a DeckService that takes into account the user.
-*/
--(id) initWithUser: (User*) user;
-
-/*
-    Gets a list of decks from the web service. Also, loads the decks into the
-    SQLite database for caching.
-*/
--(NSArray*) getDeckList;
-
-/*
-    Updates the cards in the SQLite database. Automatica
-*/
--(void) updateCardsFromDeck: (Deck*) deck;
-
-/*
-    Creates a new deck 
-*/
--(Deck*) createWithDeck: (Deck*) deck;
+-(id) initWithUser: (User*) user inManagedObjectContext: (NSManagedObjectContext*) ctx;
+-(void) updateDeckList;
+-(id<Deck>) createDeck: (NSDictionary *) postDeck;
 
 @end

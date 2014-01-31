@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) DeckTable* tableView;
 @property (nonatomic, strong) UIRefreshControl* refreshControl;
+@property (nonatomic, strong) NSManagedObjectContext* managedObjectContext;
 
 @property (nonatomic, strong) id<DeckService> service;
 

@@ -2,18 +2,20 @@
 //  Deck.h
 //  DeckManager
 //
-//  Created by Jake Gregg on 1/22/14.
+//  Created by Andy Oberlin on 1/30/14.
 //  Copyright (c) 2014 Rememerme. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface Deck : NSObject
+@protocol Deck <NSObject>
 
-@property (nonatomic, strong) NSString* deck_id;
-@property (nonatomic, strong) NSString* description;
-@property (nonatomic, strong) NSString* name;
-
--(id) initWithDictionary: (NSDictionary*) dict;
+@property (nonatomic, retain) NSString* deck_id;
+@property (nonatomic, retain) NSString* description_text;
+@property (nonatomic, retain) NSString* name;
+@property (nonatomic, retain) NSDate* last_modified;
+@property (nonatomic, retain) NSDate* date_created;
+@property (nonatomic, retain) NSDate* cards_last_updated;
+@property (nonatomic, retain) NSManagedObject* cards;
 
 @end

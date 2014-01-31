@@ -11,7 +11,7 @@
 
 @interface DeckTable : UITableView <UITableViewDelegate, UITableViewDataSource>
 
--(id) initWithFrame:(CGRect)frame andStyle:(UITableViewStyle)style andService: (id<DeckService>) service;
+-(id) initWithFrame: (CGRect) frame andStyle: (UITableViewStyle) style andService: (id<DeckService>) service;
 
 @property (nonatomic, strong) id<DeckService> service;
 @property (nonatomic, strong) NSArray* decks;

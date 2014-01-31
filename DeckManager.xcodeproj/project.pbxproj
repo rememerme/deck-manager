@@ -12,6 +12,11 @@
 		406DDCB31891C8AA00BA84C2 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 406DDCB21891C8AA00BA84C2 /* HomeViewController.m */; };
 		406DDCB51892053D00BA84C2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406DDCB41892053D00BA84C2 /* CoreData.framework */; };
 		406DDCB8189205F700BA84C2 /* DeckManagerData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 406DDCB6189205F700BA84C2 /* DeckManagerData.xcdatamodeld */; };
+		406DDCBB18931ED900BA84C2 /* PhraseDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 406DDCBA18931ED900BA84C2 /* PhraseDeck.m */; };
+		406DDCBF189845B100BA84C2 /* PhraseDeckDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 406DDCBE189845B100BA84C2 /* PhraseDeckDao.m */; };
+		406DDCC3189AB3A100BA84C2 /* Update.m in Sources */ = {isa = PBXBuildFile; fileRef = 406DDCC2189AB3A100BA84C2 /* Update.m */; };
+		406DDCC6189AB44000BA84C2 /* UpdateDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 406DDCC5189AB44000BA84C2 /* UpdateDao.m */; };
+		406DDCCE189B779100BA84C2 /* CreateDeckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 406DDCCD189B779100BA84C2 /* CreateDeckViewController.m */; };
 		9DB9D3F018904B7E00B1D97C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9D3EF18904B7E00B1D97C /* Foundation.framework */; };
 		9DB9D3F218904B7E00B1D97C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9D3F118904B7E00B1D97C /* CoreGraphics.framework */; };
 		9DB9D3F418904B7E00B1D97C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9D3F318904B7E00B1D97C /* UIKit.framework */; };
@@ -26,7 +31,6 @@
 		9DB9D41118904B7E00B1D97C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9D3F318904B7E00B1D97C /* UIKit.framework */; };
 		9DB9D41918904B7E00B1D97C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9DB9D41718904B7E00B1D97C /* InfoPlist.strings */; };
 		9DB9D41B18904B7E00B1D97C /* DeckManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9D41A18904B7E00B1D97C /* DeckManagerTests.m */; };
-		9DB9D4261890559200B1D97C /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9D4251890559200B1D97C /* Deck.m */; };
 		9DB9D42C1890564400B1D97C /* PhraseDeckService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9D42B1890564400B1D97C /* PhraseDeckService.m */; };
 		9DB9D42F1890570400B1D97C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9D42E1890570400B1D97C /* User.m */; };
 		9DB9D43118905DB600B1D97C /* decks_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DB9D43018905DB600B1D97C /* decks_test.json */; };
@@ -45,13 +49,25 @@
 /* Begin PBXFileReference section */
 		406DDCAA1891AB0000BA84C2 /* DeckTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeckTable.h; sourceTree = "<group>"; };
 		406DDCAB1891AB0000BA84C2 /* DeckTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeckTable.m; sourceTree = "<group>"; };
-		406DDCAD1891B1C600BA84C2 /* DeckService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeckService.h; sourceTree = "<group>"; };
 		406DDCAE1891B64000BA84C2 /* MockDeckService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MockDeckService.h; path = Images.xcassets/MockDeckService.h; sourceTree = "<group>"; };
 		406DDCAF1891B64000BA84C2 /* MockDeckService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MockDeckService.m; path = Images.xcassets/MockDeckService.m; sourceTree = "<group>"; };
 		406DDCB11891C8AA00BA84C2 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		406DDCB21891C8AA00BA84C2 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		406DDCB41892053D00BA84C2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		406DDCB7189205F700BA84C2 /* DeckManagerData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DeckManagerData.xcdatamodel; sourceTree = "<group>"; };
+		406DDCB918931ED900BA84C2 /* PhraseDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhraseDeck.h; sourceTree = "<group>"; };
+		406DDCBA18931ED900BA84C2 /* PhraseDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhraseDeck.m; sourceTree = "<group>"; };
+		406DDCBD189845B100BA84C2 /* PhraseDeckDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhraseDeckDao.h; sourceTree = "<group>"; };
+		406DDCBE189845B100BA84C2 /* PhraseDeckDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhraseDeckDao.m; sourceTree = "<group>"; };
+		406DDCC1189AB3A100BA84C2 /* Update.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Update.h; sourceTree = "<group>"; };
+		406DDCC2189AB3A100BA84C2 /* Update.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Update.m; sourceTree = "<group>"; };
+		406DDCC4189AB44000BA84C2 /* UpdateDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateDao.h; sourceTree = "<group>"; };
+		406DDCC5189AB44000BA84C2 /* UpdateDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateDao.m; sourceTree = "<group>"; };
+		406DDCC7189B2DC700BA84C2 /* DeckService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeckService.h; sourceTree = "<group>"; };
+		406DDCC8189B2DF600BA84C2 /* Deck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		406DDCC9189B303000BA84C2 /* DeckDao.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeckDao.h; sourceTree = "<group>"; };
+		406DDCCC189B779100BA84C2 /* CreateDeckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateDeckViewController.h; sourceTree = "<group>"; };
+		406DDCCD189B779100BA84C2 /* CreateDeckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateDeckViewController.m; sourceTree = "<group>"; };
 		9DB9D3EC18904B7E00B1D97C /* DeckManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeckManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB9D3EF18904B7E00B1D97C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9DB9D3F118904B7E00B1D97C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -71,8 +87,6 @@
 		9DB9D41618904B7E00B1D97C /* DeckManagerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DeckManagerTests-Info.plist"; sourceTree = "<group>"; };
 		9DB9D41818904B7E00B1D97C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9DB9D41A18904B7E00B1D97C /* DeckManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeckManagerTests.m; sourceTree = "<group>"; };
-		9DB9D4241890559200B1D97C /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
-		9DB9D4251890559200B1D97C /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
 		9DB9D42A1890564400B1D97C /* PhraseDeckService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhraseDeckService.h; sourceTree = "<group>"; };
 		9DB9D42B1890564400B1D97C /* PhraseDeckService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhraseDeckService.m; sourceTree = "<group>"; };
 		9DB9D42D1890570400B1D97C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -105,6 +119,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		406DDCBC1898401D00BA84C2 /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				406DDCBD189845B100BA84C2 /* PhraseDeckDao.h */,
+				406DDCC9189B303000BA84C2 /* DeckDao.h */,
+				406DDCBE189845B100BA84C2 /* PhraseDeckDao.m */,
+				406DDCC4189AB44000BA84C2 /* UpdateDao.h */,
+				406DDCC5189AB44000BA84C2 /* UpdateDao.m */,
+			);
+			name = Dao;
+			sourceTree = "<group>";
+		};
 		9DB9D3E318904B7E00B1D97C = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +166,7 @@
 		9DB9D3F518904B7E00B1D97C /* DeckManager */ = {
 			isa = PBXGroup;
 			children = (
+				406DDCBC1898401D00BA84C2 /* Dao */,
 				9DB9D4281890561500B1D97C /* Service */,
 				9DB9D427189055F900B1D97C /* Model */,
 				9DB9D4291890562100B1D97C /* Interface */,
@@ -182,10 +209,13 @@
 		9DB9D427189055F900B1D97C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				406DDCC1189AB3A100BA84C2 /* Update.h */,
+				406DDCC2189AB3A100BA84C2 /* Update.m */,
+				406DDCB918931ED900BA84C2 /* PhraseDeck.h */,
+				406DDCBA18931ED900BA84C2 /* PhraseDeck.m */,
 				9DB9D42D1890570400B1D97C /* User.h */,
 				9DB9D42E1890570400B1D97C /* User.m */,
-				9DB9D4241890559200B1D97C /* Deck.h */,
-				9DB9D4251890559200B1D97C /* Deck.m */,
+				406DDCC8189B2DF600BA84C2 /* Deck.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -195,9 +225,9 @@
 			children = (
 				9DB9D42A1890564400B1D97C /* PhraseDeckService.h */,
 				9DB9D42B1890564400B1D97C /* PhraseDeckService.m */,
-				406DDCAD1891B1C600BA84C2 /* DeckService.h */,
 				406DDCAE1891B64000BA84C2 /* MockDeckService.h */,
 				406DDCAF1891B64000BA84C2 /* MockDeckService.m */,
+				406DDCC7189B2DC700BA84C2 /* DeckService.h */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -210,6 +240,8 @@
 				9DB9D3FE18904B7E00B1D97C /* AppDelegate.h */,
 				9DB9D3FF18904B7E00B1D97C /* AppDelegate.m */,
 				9DB9D40118904B7E00B1D97C /* Main.storyboard */,
+				406DDCCC189B779100BA84C2 /* CreateDeckViewController.h */,
+				406DDCCD189B779100BA84C2 /* CreateDeckViewController.m */,
 				9DB9D40418904B7E00B1D97C /* DeckViewController.h */,
 				9DB9D40518904B7E00B1D97C /* DeckViewController.m */,
 				406DDCB11891C8AA00BA84C2 /* HomeViewController.h */,
@@ -316,13 +348,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DB9D4261890559200B1D97C /* Deck.m in Sources */,
 				9DB9D40618904B7E00B1D97C /* DeckViewController.m in Sources */,
 				406DDCB8189205F700BA84C2 /* DeckManagerData.xcdatamodeld in Sources */,
 				9DB9D42F1890570400B1D97C /* User.m in Sources */,
+				406DDCC3189AB3A100BA84C2 /* Update.m in Sources */,
 				9DB9D42C1890564400B1D97C /* PhraseDeckService.m in Sources */,
+				406DDCBB18931ED900BA84C2 /* PhraseDeck.m in Sources */,
+				406DDCC6189AB44000BA84C2 /* UpdateDao.m in Sources */,
 				406DDCAC1891AB0000BA84C2 /* DeckTable.m in Sources */,
 				406DDCB31891C8AA00BA84C2 /* HomeViewController.m in Sources */,
+				406DDCCE189B779100BA84C2 /* CreateDeckViewController.m in Sources */,
+				406DDCBF189845B100BA84C2 /* PhraseDeckDao.m in Sources */,
 				9DB9D40018904B7E00B1D97C /* AppDelegate.m in Sources */,
 				406DDCB01891B64000BA84C2 /* MockDeckService.m in Sources */,
 				9DB9D3FC18904B7E00B1D97C /* main.m in Sources */,

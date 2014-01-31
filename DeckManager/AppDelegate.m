@@ -19,7 +19,13 @@
 - (BOOL)application:(UIApplication *) application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    HomeViewController* controller = [[HomeViewController alloc] init];
+    
+    // create the user with the correct session id to allow for superuser activities
+    NSString* session_id = @"";
+    NSString* user_id = @"";
+    User* user = [[User alloc] initWithSession: session_id andID: user_id];
+    
+    HomeViewController* controller = [[HomeViewController alloc] initWithUser:user inManagedObjectContext: self.managedObjectContext];
     UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:controller];
     
     self.window.rootViewController = navController;
@@ -55,7 +61,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (void)saveContext
+- (void) saveContext
 {
     NSError* error = nil;
     NSManagedObjectContext* managedObjectContext = self.managedObjectContext;
